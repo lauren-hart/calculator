@@ -21,31 +21,35 @@ class App extends React.Component {
     return (
       <div className='app'>
         <h1>Calculator</h1>
-        <div className="container">
-          <input></input>
-          <div className="row">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>/</button>
+        <div className="calculator">
+          <div className="display">
+            <input></input>
           </div>
-          <div className="row">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>x</button>
-          </div>
-          <div className="row">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>-</button>
-          </div>
-          <div className="row">
-            <button>0</button>
-            <button>.</button>
-            <button>+</button>
-            <button>=</button>
+          <div className="keys">
+            <p>
+              <button className="button gray">7</button>
+              <button className="button gray">8</button>
+              <button className="button gray">9</button>
+              <button className="button pink">/</button>
+            </p>
+            <p>
+              <button className="button gray">4</button>
+              <button className="button gray">5</button>
+              <button className="button gray">6</button>
+              <button className="button pink">x</button>
+            </p>
+            <p>
+              <button className="button gray">1</button>
+              <button className="button gray">2</button>
+              <button className="button gray">3</button>
+              <button className="button pink">-</button>
+            </p>
+            <p>
+              <button className="button gray">0</button>
+              <button className="button pink">.</button>
+              <button className="button pink">+</button>
+              <button className="button orange">=</button>
+            </p>
           </div>
         </div>
       </div>
