@@ -86,6 +86,11 @@ class App extends React.Component {
         answer: answer / lastNum,
         display: (answer / lastNum).toFixed(4)
       })
+    } else if (operator === 'x') {
+      this.setState({
+        answer: answer * lastNum,
+        display: (answer * lastNum).toFixed(4)
+      })
     }
   }
 
@@ -127,7 +132,7 @@ class App extends React.Component {
               <button value="4" name="digit" onClick={this.handleClick} className="button gray">4</button>
               <button value="5" name="digit" onClick={this.handleClick} className="button gray">5</button>
               <button value="6" name="digit" onClick={this.handleClick} className="button gray">6</button>
-              {/* <button value="x" name="digit" onClick={this.handleOperator} className="button pink">x</button> */}
+              <button value="x" name="operator" onClick={this.handleClick} className="button pink">x</button>
             </p>
             <p>
               <button value="1" name="digit" onClick={this.handleClick} className="button gray">1</button>
