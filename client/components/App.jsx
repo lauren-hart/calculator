@@ -1,54 +1,58 @@
 import React from 'react'
 
-import {getFruits} from '../apiClient'
-
 class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      fruits: []
+      input: ''
     }
+    this.handleClick = this.handleClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  componentDidMount () {
-    getFruits()
-      .then(fruits => {
-        this.setState({fruits})
-      })
+  handleClick (e) {
+    this.setState({
+      input: this.state.input + e.target.value
+    })
+  }
+
+  handleChange (e) {
+    this.setState({
+      input: this.state.input + e.target.value
+    })
   }
 
   render () {
     return (
       <div className='app'>
-        <h1>Calculator</h1>
         <div className="calculator">
           <div className="display">
-            <input></input>
+            <input onChange={this.handleChange} value={this.state.input}></input>
           </div>
           <div className="keys">
             <p>
-              <button className="button gray">7</button>
-              <button className="button gray">8</button>
-              <button className="button gray">9</button>
-              <button className="button pink">/</button>
+              <button value="7" onClick={this.handleClick} className="button gray">7</button>
+              <button value="8" onClick={this.handleClick} className="button gray">8</button>
+              <button value="9" onClick={this.handleClick} className="button gray">9</button>
+              <button value="/" onClick={this.handleClick} className="button pink">/</button>
             </p>
             <p>
-              <button className="button gray">4</button>
-              <button className="button gray">5</button>
-              <button className="button gray">6</button>
-              <button className="button pink">x</button>
+              <button value="4" onClick={this.handleClick} className="button gray">4</button>
+              <button value="5" onClick={this.handleClick} className="button gray">5</button>
+              <button value="6" onClick={this.handleClick} className="button gray">6</button>
+              <button value="x" onClick={this.handleClick} className="button pink">x</button>
             </p>
             <p>
-              <button className="button gray">1</button>
-              <button className="button gray">2</button>
-              <button className="button gray">3</button>
-              <button className="button pink">-</button>
+              <button value="1" onClick={this.handleClick} className="button gray">1</button>
+              <button value="2" onClick={this.handleClick} className="button gray">2</button>
+              <button value="3" onClick={this.handleClick} className="button gray">3</button>
+              <button value="-" onClick={this.handleClick} className="button pink">-</button>
             </p>
             <p>
-              <button className="button gray">0</button>
-              <button className="button pink">.</button>
-              <button className="button pink">+</button>
-              <button className="button orange">=</button>
+              <button value="0" onClick={this.handleClick} className="button gray">0</button>
+              <button value="." onClick={this.handleClick} className="button pink">.</button>
+              <button value="+" onClick={this.handleClick} className="button pink">+</button>
+              <button value="=" onClick={this.handleClick} className="button orange">=</button>
             </p>
           </div>
         </div>
