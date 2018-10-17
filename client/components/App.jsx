@@ -47,15 +47,15 @@ class App extends React.Component {
   }
 
   handleOperator (key) {
-    const answer = Number(this.state.answer)
+    const answer = this.state.answer
     const lastNum = Number(this.state.lastNum)
     this.setState({
       isOperator: true,
       operator: key,
       display: key,
-      answer: answer + lastNum
+      answer: Number(answer) + lastNum
     })
-    if (this.state.answer !== []) {
+    if (answer !== []) {
       this.setState({
         lastNum: []
       })
@@ -63,10 +63,13 @@ class App extends React.Component {
   }
 
   handleEquals () {
-    if (this.state.operator === '+') {
+    const operator = this.state.operator
+    const answer = Number(this.state.answer)
+    const lastNum = Number(this.state.lastNum)
+    if (operator === '+') {
       this.setState({
-        answer: Number(this.state.answer) + Number(this.state.lastNum),
-        display: Number(this.state.answer) + Number(this.state.lastNum)
+        answer: answer + lastNum,
+        display: answer + lastNum
       })
     }
   }
