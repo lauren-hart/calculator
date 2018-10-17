@@ -17,6 +17,7 @@ class App extends React.Component {
     this.handleDigit = this.handleDigit.bind(this)
     this.handleEquals = this.handleEquals.bind(this)
     this.handleClear = this.handleClear.bind(this)
+    this.handleClearLast = this.handleClearLast.bind(this)
   }
 
   handleClick (e) {
@@ -33,7 +34,6 @@ class App extends React.Component {
 
   handleDigit (key, type) {
     const lastNum = this.state.lastNum
-    // get the last digit of lastNum and if it is .
     if (type === 'decimal') {
       if (!this.state.isDecimal) {
         this.setState({
@@ -103,6 +103,13 @@ class App extends React.Component {
     })
   }
 
+  handleClearLast () {
+    this.setState({
+      lastNum: '',
+      display: ''
+    })
+  }
+
   render () {
     // console.log(this.state.display, 'display')
     console.log(this.state.lastNum, 'last number')
@@ -148,6 +155,7 @@ class App extends React.Component {
             </p>
             <p>
               <button value="" name="digit" onClick={this.handleClear} className="button orange">AC</button>
+              <button value="" name="digit" onClick={this.handleClearLast} className="button orange">CE</button>
             </p>
           </div>
         </div>
