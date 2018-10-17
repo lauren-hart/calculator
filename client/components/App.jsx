@@ -47,12 +47,13 @@ class App extends React.Component {
   }
 
   handleOperator (key) {
+    const answer = Number(this.state.answer)
+    const lastNum = Number(this.state.lastNum)
     this.setState({
       isOperator: true,
       operator: key,
       display: key,
-      answer: Number(this.state.answer) +
-      ((Number)(this.state.lastNum))
+      answer: answer + lastNum
     })
     if (this.state.answer !== []) {
       this.setState({
