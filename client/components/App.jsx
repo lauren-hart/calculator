@@ -26,15 +26,24 @@ class App extends React.Component {
     } else if (type === 'equals') {
       this.handleEquals()
     } else {
-      this.handleDigit(key)
+      this.handleDigit(key, type)
     }
   }
 
-  handleDigit (key) {
-    this.setState({
-      lastNum: this.state.lastNum + key,
-      display: this.state.lastNum + key
-    })
+  handleDigit (key, type) {
+    const lastNum = this.state.lastNum
+    // get the last digit of lastNum and if it is .
+    if (type === 'decimal') {
+      this.setState({
+        lastNum: lastNum + key,
+        display: lastNum + key
+      })
+    } else {
+      this.setState({
+        lastNum: lastNum + key,
+        display: lastNum + key
+      })
+    }
   }
 
   handleOperator (key) {
@@ -108,7 +117,7 @@ class App extends React.Component {
             </p>
             <p>
               <button value="0" name="digit" onClick={this.handleClick} className="button gray">0</button>
-              {/* <button value="." name="digit" onClick={this.handleDecimal} className="button pink">.</button> */}
+              <button value="." name="decimal" onClick={this.handleClick} className="button pink">.</button>
               <button value="+" name="operator" onClick={this.handleClick} className="button pink">+</button>
               <button value="=" name="equals" onClick={this.handleClick} className="button orange">=</button>
             </p>
