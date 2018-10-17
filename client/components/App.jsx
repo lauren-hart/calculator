@@ -49,8 +49,15 @@ class App extends React.Component {
     this.setState({
       isOperator: true,
       operator: key,
-      display: key
+      display: key,
+      answer: Number(this.state.lastNum) + Number(this.state.nextNum)
     })
+    if (this.state.answer !== []) {
+      this.setState({
+        lastNum: [],
+        nextNum: []
+      })
+    }
   }
 
   handleEquals () {
@@ -66,7 +73,8 @@ class App extends React.Component {
     this.setState({
       lastNum: '',
       nextNum: '',
-      display: ''
+      display: '',
+      isOperator: false
     })
   }
 
