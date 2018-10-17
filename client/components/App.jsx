@@ -6,7 +6,6 @@ class App extends React.Component {
     this.state = {
       display: '',
       lastNum: [],
-      nextNum: [],
       isOperator: false,
       operator: null,
       isEquals: false,
@@ -32,17 +31,10 @@ class App extends React.Component {
   }
 
   handleDigit (key) {
-    if (this.state.isOperator) {
-      this.setState({
-        nextNum: this.state.nextNum + key,
-        display: this.state.nextNum + key
-      })
-    } else {
-      this.setState({
-        lastNum: this.state.lastNum + key,
-        display: this.state.lastNum + key
-      })
-    }
+    this.setState({
+      lastNum: this.state.lastNum + key,
+      display: this.state.lastNum + key
+    })
   }
 
   handleOperator (key) {
@@ -50,12 +42,12 @@ class App extends React.Component {
       isOperator: true,
       operator: key,
       display: key,
-      answer: Number(this.state.lastNum) + Number(this.state.nextNum)
+      answer: Number(this.state.answer) +
+      ((Number)(this.state.lastNum))
     })
     if (this.state.answer !== []) {
       this.setState({
-        lastNum: [],
-        nextNum: []
+        lastNum: []
       })
     }
   }
@@ -63,8 +55,8 @@ class App extends React.Component {
   handleEquals () {
     if (this.state.operator === '+') {
       this.setState({
-        answer: Number(this.state.lastNum) + Number(this.state.nextNum),
-        display: Number(this.state.lastNum) + Number(this.state.nextNum)
+        answer: Number(this.state.answer) + Number(this.state.lastNum),
+        display: Number(this.state.answer) + Number(this.state.lastNum)
       })
     }
   }
@@ -72,16 +64,15 @@ class App extends React.Component {
   handleClear () {
     this.setState({
       lastNum: '',
-      nextNum: '',
       display: '',
-      isOperator: false
+      isOperator: false,
+      answer: ''
     })
   }
 
   render () {
     // console.log(this.state.display, 'display')
     console.log(this.state.lastNum, 'last number')
-    console.log(this.state.nextNum, 'next number')
     console.log(this.state.isOperator, 'is operator?')
     console.log(this.state.operator, 'operator')
     console.log(this.state.answer, 'answer')
