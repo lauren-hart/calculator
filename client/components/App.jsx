@@ -16,6 +16,7 @@ class App extends React.Component {
     this.handleOperator = this.handleOperator.bind(this)
     this.handleDigit = this.handleDigit.bind(this)
     this.handleEquals = this.handleEquals.bind(this)
+    this.handleClear = this.handleClear.bind(this)
   }
 
   handleClick (e) {
@@ -59,6 +60,14 @@ class App extends React.Component {
         display: Number(this.state.lastNum) + Number(this.state.nextNum)
       })
     }
+  }
+
+  handleClear () {
+    this.setState({
+      lastNum: '',
+      nextNum: '',
+      display: ''
+    })
   }
 
   render () {
@@ -105,7 +114,7 @@ class App extends React.Component {
               <button value="=" name="equals" onClick={this.handleClick} className="button orange">=</button>
             </p>
             <p>
-              <button value="" name="digit" onClick={this.handleClear} className="button orange">CE</button>
+              <button value="" name="digit" onClick={this.handleClear} className="button orange">AC</button>
             </p>
           </div>
         </div>
