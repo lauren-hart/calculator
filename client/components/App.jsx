@@ -8,6 +8,7 @@ class App extends React.Component {
     }
     this.handleClick = this.handleClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleClear = this.handleClear.bind(this)
   }
 
   handleClick (e) {
@@ -22,12 +23,18 @@ class App extends React.Component {
     })
   }
 
+  handleClear () {
+    this.setState({
+      input: ''
+    })
+  }
+
   render () {
     return (
       <div className='app'>
         <div className="calculator">
           <div className="display">
-            <input onChange={this.handleChange} value={this.state.input}></input>
+            <input placeholder="0" onChange={this.handleChange} value={this.state.input}></input>
           </div>
           <div className="keys">
             <p>
@@ -53,6 +60,9 @@ class App extends React.Component {
               <button value="." onClick={this.handleClick} className="button pink">.</button>
               <button value="+" onClick={this.handleClick} className="button pink">+</button>
               <button value="=" onClick={this.handleClick} className="button orange">=</button>
+            </p>
+            <p>
+              <button value="" onClick={this.handleClear} className="button orange">CE</button>
             </p>
           </div>
         </div>
