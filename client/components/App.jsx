@@ -74,7 +74,7 @@ class App extends React.Component {
     if (operator === '+') {
       this.setState({
         answer: answer + lastNum,
-        display: answer + lastNum
+        display: (answer + lastNum).toFixed(4)
       })
     }
   }
