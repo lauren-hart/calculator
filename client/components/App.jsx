@@ -9,7 +9,8 @@ class App extends React.Component {
       isOperator: false,
       operator: null,
       isEquals: false,
-      answer: ''
+      answer: '',
+      isDecimal: false
     }
     this.handleClick = this.handleClick.bind(this)
     this.handleOperator = this.handleOperator.bind(this)
@@ -34,14 +35,18 @@ class App extends React.Component {
     const lastNum = this.state.lastNum
     // get the last digit of lastNum and if it is .
     if (type === 'decimal') {
-      this.setState({
-        lastNum: lastNum + key,
-        display: lastNum + key
-      })
+      if (!this.state.isDecimal) {
+        this.setState({
+          lastNum: lastNum + key,
+          display: lastNum + key,
+          isDecimal: true
+        })
+      }
     } else {
       this.setState({
         lastNum: lastNum + key,
-        display: lastNum + key
+        display: lastNum + key,
+        isDecimal: false
       })
     }
   }
@@ -89,6 +94,7 @@ class App extends React.Component {
     console.log(this.state.isOperator, 'is operator?')
     console.log(this.state.operator, 'operator')
     console.log(this.state.answer, 'answer')
+    console.log(this.state.isDecimal, 'decimal')
 
     return (
       <div className='app'>
