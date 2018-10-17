@@ -4,65 +4,108 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      input: ''
+      display: '',
+      lastNum: [],
+      nextNum: [],
+      isOperator: false,
+      operator: null,
+      isEquals: false,
+      answer: ''
     }
     this.handleClick = this.handleClick.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleClear = this.handleClear.bind(this)
+    this.handleOperator = this.handleOperator.bind(this)
+    this.handleDigit = this.handleDigit.bind(this)
+    this.handleEquals = this.handleEquals.bind(this)
   }
 
   handleClick (e) {
+    const type = e.target.name
+    const key = e.target.value
+    if (type === 'operator') {
+      this.handleOperator(key)
+    } else if (type === 'equals') {
+      this.handleEquals()
+    } else {
+      this.handleDigit(key)
+    }
+  }
+
+  handleDigit (key) {
+    if (this.state.isOperator) {
+      this.setState({
+        nextNum: this.state.nextNum + key,
+        display: this.state.nextNum + key
+      })
+    } else {
+      this.setState({
+        lastNum: this.state.lastNum + key,
+        display: this.state.lastNum + key
+      })
+    }
+  }
+
+  handleOperator (key) {
     this.setState({
-      input: this.state.input + e.target.value
+      isOperator: true,
+      operator: key,
+      display: key
     })
   }
 
-  handleChange (e) {
-    this.setState({
-      input: this.state.input + e.target.value
-    })
-  }
-
-  handleClear () {
-    this.setState({
-      input: ''
-    })
+  handleEquals () {
+    if (this.state.operator === '+') {
+      this.setState({
+        answer: Number(this.state.lastNum) + Number(this.state.nextNum),
+        display: Number(this.state.lastNum) + Number(this.state.nextNum)
+      })
+    }
   }
 
   render () {
+    // console.log(this.state.display, 'display')
+    console.log(this.state.lastNum, 'last number')
+    console.log(this.state.nextNum, 'next number')
+    console.log(this.state.isOperator, 'is operator?')
+    console.log(this.state.operator, 'operator')
+    console.log(this.state.answer, 'answer')
+
     return (
       <div className='app'>
-        <div className="calculator">
+        <div className='calculator'>
           <div className="display">
-            <input placeholder="0" onChange={this.handleChange} value={this.state.input}></input>
+            <input
+              placeholder="0"
+              value={this.state.display}
+              readOnly>
+            </input>
           </div>
           <div className="keys">
             <p>
-              <button value="7" onClick={this.handleClick} className="button gray">7</button>
-              <button value="8" onClick={this.handleClick} className="button gray">8</button>
-              <button value="9" onClick={this.handleClick} className="button gray">9</button>
-              <button value="/" onClick={this.handleClick} className="button pink">/</button>
+              <button value="7" name="digit" onClick={this.handleClick} className="button gray">7</button>
+              <button value="8" name="digit" onClick={this.handleClick} className="button gray">8</button>
+              <button value="9" name="digit" onClick={this.handleClick} className="button gray">9</button>
+              {/* <button value="/" name="digit" onClick={this.handleOperator} className="button pink">/</button> */}
             </p>
             <p>
-              <button value="4" onClick={this.handleClick} className="button gray">4</button>
-              <button value="5" onClick={this.handleClick} className="button gray">5</button>
-              <button value="6" onClick={this.handleClick} className="button gray">6</button>
-              <button value="x" onClick={this.handleClick} className="button pink">x</button>
+              <button value="4" name="digit" onClick={this.handleClick} className="button gray">4</button>
+              <button value="5" name="digit" onClick={this.handleClick} className="button gray">5</button>
+              <button value="6" name="digit" onClick={this.handleClick} className="button gray">6</button>
+              {/* <button value="x" name="digit" onClick={this.handleOperator} className="button pink">x</button> */}
             </p>
             <p>
-              <button value="1" onClick={this.handleClick} className="button gray">1</button>
-              <button value="2" onClick={this.handleClick} className="button gray">2</button>
-              <button value="3" onClick={this.handleClick} className="button gray">3</button>
-              <button value="-" onClick={this.handleClick} className="button pink">-</button>
+              <button value="1" name="digit" onClick={this.handleClick} className="button gray">1</button>
+              <button value="2" name="digit" onClick={this.handleClick} className="button gray">2</button>
+              <button value="3" name="digit" onClick={this.handleClick} className="button gray">3</button>
+              {/* <button value="-" name="digit" onClick={this.handleOperator} className="button pink">-</button> */}
             </p>
             <p>
-              <button value="0" onClick={this.handleClick} className="button gray">0</button>
-              <button value="." onClick={this.handleClick} className="button pink">.</button>
-              <button value="+" onClick={this.handleClick} className="button pink">+</button>
-              <button value="=" onClick={this.handleClick} className="button orange">=</button>
+              <button value="0" name="digit" onClick={this.handleClick} className="button gray">0</button>
+              {/* <button value="." name="digit" onClick={this.handleDecimal} className="button pink">.</button> */}
+              <button value="+" name="operator" onClick={this.handleClick} className="button pink">+</button>
+              <button value="=" name="equals" onClick={this.handleClick} className="button orange">=</button>
             </p>
             <p>
-              <button value="" onClick={this.handleClear} className="button orange">CE</button>
+              <button value="" name="digit" onClick={this.handleClear} className="button orange">CE</button>
             </p>
           </div>
         </div>
