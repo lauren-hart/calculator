@@ -11,8 +11,8 @@
 
 
     .calculator {
-      background-color: #9fc7c2;
-      height: 300px;
+      background-color: rgb(7, 7, 66);
+      height: 330px;
       width: 250px;
       border-radius: 10px;
       position: relative;
@@ -22,12 +22,14 @@
   }
 
   .display {
-    background-color: #222;
+    background-color: rgb(143, 136, 136);
     width: 220px;
     position: relative;
     left: 15px;
     top: 20px;
     height: 40px; 
+    margin-bottom: 10%;
+    margin-top: 10%;
   }
 
   .display input {
@@ -40,6 +42,7 @@
     font-size: 21px;
     text-align: right;
     width:220px;
+    margin-bottom: 10%;
 }
 
 .keys {
@@ -59,14 +62,14 @@
 
   .button.gray {
       color: white;
-      background-color: #6f6f6f;
+      background-color: #928d8d;
       border-bottom: black 2px solid;
       border-top: 2px #6f6f6f solid;
   }
 
   .button.pink {
       color: black;
-      background-color: #dd5a6e;
+      background-color: #d6929c;
       border-bottom: black 2px solid;
   }
 
@@ -79,7 +82,7 @@
 
   .button.orange {
       color: black;
-      background-color: #FF9933;
+      background-color: rgb(247, 201, 76);
       border-bottom: black 2px solid;
       border-top: 2px FF9933 solid;
   }
