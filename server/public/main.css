@@ -11,7 +11,7 @@
 
 
     .calculator {
-      background-color: rgb(7, 7, 66);
+      background-color: #3B3857;
       height: 330px;
       width: 250px;
       border-radius: 10px;
@@ -22,7 +22,7 @@
   }
 
   .display {
-    background-color: rgb(143, 136, 136);
+    background-color: #E4DACE;
     width: 220px;
     position: relative;
     left: 15px;
@@ -34,11 +34,11 @@
 
   .display input {
     position: relative;
-    left: 2px;
-    top: 2px;
-    height: 35px;
+    left: 1px;
+    top: 1px;
+    height: 37px;
     color: black;
-    background-color: #cecfcc;
+    background-color: #E4DACE;
     font-size: 21px;
     text-align: right;
     width:220px;
@@ -62,14 +62,14 @@
 
   .button.gray {
       color: white;
-      background-color: #928d8d;
+      background-color: #747BA9;
       border-bottom: black 2px solid;
       border-top: 2px #6f6f6f solid;
   }
 
   .button.pink {
-      color: black;
-      background-color: #d6929c;
+      color: white;
+      background-color: #9A1B27;
       border-bottom: black 2px solid;
   }
 
@@ -82,7 +82,7 @@
 
   .button.orange {
       color: black;
-      background-color: rgb(247, 201, 76);
+      background-color: #F2DD66;
       border-bottom: black 2px solid;
       border-top: 2px FF9933 solid;
   }
@@ -103,8 +103,7 @@
 }
 
 .orange:active {
-  border-top: black 2px solid;
-  border-bottom: FF9933 2px solid;
+background: #eb8090
 }
 
 p {
