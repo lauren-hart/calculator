@@ -22,7 +22,7 @@
   }
 
   .display {
-    background-color: #E4DACE;
+    background-color: rgb(226, 226, 226);
     width: 220px;
     position: relative;
     left: 15px;
@@ -38,7 +38,7 @@
     top: 1px;
     height: 37px;
     color: black;
-    background-color: #E4DACE;
+    background-color: rgb(231, 231, 231);
     font-size: 21px;
     text-align: right;
     width:220px;
