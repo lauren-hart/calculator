@@ -67,14 +67,17 @@ class App extends React.Component {
     }
   }
 
+  // need a function to determine how many digits are after the
+  // decimal point
+
   handleEquals () {
     const operator = this.state.operator
     const answer = Number(this.state.answer)
     const lastNum = Number(this.state.lastNum)
     if (operator === '+') {
       this.setState({
-        answer: answer + lastNum,
-        display: (answer + lastNum).toFixed(4)
+        answer: (answer + lastNum),
+        display: (answer + lastNum)
       })
     } else if (operator === '-') {
       this.setState({
@@ -111,7 +114,7 @@ class App extends React.Component {
   }
 
   render () {
-    // console.log(this.state.display, 'display')
+    console.log(this.state.display, 'display')
     console.log(this.state.lastNum, 'last number')
     console.log(this.state.isOperator, 'is operator?')
     console.log(this.state.operator, 'operator')
