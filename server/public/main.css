@@ -34,6 +34,7 @@
       text-align: right;
       margin-bottom: 8%;
       border-radius: 5px;
+      padding-right: 4%
     }
   
 
@@ -44,84 +45,95 @@
       bottom: 10px
     }
 
-.button {
-  width: 45px;
-  height: 35px;
-  border: none;
-  border-radius: 8px;
-  margin-left: 17px;
-  cursor: pointer;
-  border-top: 2px solid transparent;
-  font-size: 25px
-}
+    .button {
+      width: 45px;
+      height: 35px;
+      border: none;
+      border-radius: 8px;
+      margin-left: 17px;
+      cursor: pointer;
+      border-top: 2px solid transparent;
+      font-size: 25px;
+    }
 
-  .button.blue {
+    .button.blue {
       color: white;
       background-color: #00ACD2;
       box-shadow: 3px 3px #004C76;
-  }
+    }
 
-  .button.white {
+    .button.blue:hover {
+      color: white;
+      background-color: #004C76;
+    }
+
+    .button.blue:active {
+      transform: translateY(4px);
+    }
+
+    .button.white {
       color: #048ED8;
       background-color: white;
       box-shadow: 3px 3px #908EAE;
-  }
+    }
 
-  .button.orange {
+    .button.white:hover {
+      background-color: #908EAE;
+      color: white
+    }
+
+    .button.white:active {
+      transform: translateY(4px);
+    }
+
+
+    .button.orange {
       background-color: #FFC200;
       color: #89687F;
       box-shadow: 3px 3px #FC9925;
-  }
+    }
 
-.gray:active {
-  border-top: black 2px solid;
-  border-bottom: 2px #6f6f6f solid;
-}
+    .button.orange:hover {
+      background-color: #FC9925;
+      color: white;
+      box-shadow: 3px 3px #FC9925;
+    }
 
-.pink:active {
-  border-top: black 2px solid;
-  border-bottom: #ff4561 2px solid;
-}
+    .button.orange:active {
+      transform: translateY(4px);
+    }
 
-.black:active {
-  border-top: black 2px solid;
-  border-bottom: #303030 2px solid;
-}
 
-.orange:active {
-background: #eb8090
-}
+    p {
+      line-height: 10px;
+    }
 
-p {
-  line-height: 10px;
-}
+    h1 {
+      text-align: center;
+      margin-top: 2%;
+      font-family: 'Mali', cursive;
+      color: #2E2E37;
+      font-size: 45px
+    }
 
-h1 {
-  text-align: center;
-  margin-top: 2%;
-  font-family: 'Mali', cursive;
-  color: #2E2E37;
-  font-size: 45px
-}
-
-.bg {
-  background-image: url("./background.jpg");
-  background-color: grey;
-  background-position: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover !important;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  filter: blur(0.5px) brightness(80%);
-  min-height: 100vh;
-  height: 100%;
-  width: 100vw;
-  display:flex;
-  align-items: center;
-}
+    .bg {
+      background-image: url("./background.jpg");
+      background-color: grey;
+      background-position: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      filter: blur(0.5px) brightness(80%);
+      min-height: 100vh;
+      height: 100%;
+      width: 100vw;
+      display:flex;
+      align-items: center;
+    }

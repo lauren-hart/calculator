@@ -154,9 +154,9 @@ class App extends React.Component {
             </p>
             <p>
               <button value="0" name="digit" onClick={this.handleClick} className="button blue">0</button>
-              <button value="." name="decimal" onClick={this.handleClick} className="button white">.</button>
-              <button value="+" name="operator" onClick={this.handleClick} className="button white">+</button>
+              <button value="." name="decimal" onClick={this.handleClick} className="button blue">.</button>
               <button value="=" name="equals" onClick={this.handleClick} className="button orange">=</button>
+              <button value="+" name="operator" onClick={this.handleClick} className="button white long">+</button>
             </p>
             <p>
               <button value="" name="digit" onClick={this.handleClear} className="button orange">AC</button>
