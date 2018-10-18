@@ -114,15 +114,17 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.state.display, 'display')
-    console.log(this.state.lastNum, 'last number')
-    console.log(this.state.isOperator, 'is operator?')
-    console.log(this.state.operator, 'operator')
-    console.log(this.state.answer, 'answer')
-    console.log(this.state.isDecimal, 'decimal')
+    // console.log(this.state.display, 'display')
+    // console.log(this.state.lastNum, 'last number')
+    // console.log(this.state.isOperator, 'is operator?')
+    // console.log(this.state.operator, 'operator')
+    // console.log(this.state.answer, 'answer')
+    // console.log(this.state.isDecimal, 'decimal')
 
     return (
       <div className='app'>
+        <div className="bg"></div>
+        <h1>You do the math..</h1>
         <div className='calculator'>
           <div className="display">
             <input
