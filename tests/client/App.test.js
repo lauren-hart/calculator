@@ -1,5 +1,5 @@
 import React from 'react'
-import Enzyme, {shallow} from 'enzyme'
+import Enzyme, {shallow, render} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 // import './setup-env'
 
@@ -18,11 +18,11 @@ test('<App> root has className of app', () => {
   expect(root.length).toBe(1)
 })
 
-// test('page header includes fruit', () => {
-//   const wrapper = render(<App />)
-//   const h1 = wrapper.find('h1')
-//   expect(h1.text()).toMatch(/Fruit/)
-// })
+test('page header includes math', () => {
+  const wrapper = render(<App />)
+  const h1 = wrapper.find('h1')
+  expect(h1.text()).toMatch(/math/)
+})
 
 // test('renders an <li> for each fruit', () => {
 //   const wrapper = mount(<App />)
