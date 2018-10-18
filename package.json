@@ -1,12 +1,16 @@
 {
-  "name": "restful-react-from-scratch",
+  "name": "calculator",
+  "description": "A simple calculator",
   "version": "1.0.0",
+  "repository": "https://github.com/lauren-hart/lauren-calculator",
   "main": "index.js",
+  "author": "Lauren Hart",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server & yarn build --watch",
     "build": "webpack --config client/webpack.config.js",
-    "test": "jest"
+    "test": "jest",
+    "start": "webpack && node server"
   },
   "babel": {
     "presets": [
