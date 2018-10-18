@@ -82,17 +82,17 @@ class App extends React.Component {
     } else if (operator === '-') {
       this.setState({
         answer: answer - lastNum,
-        display: (answer - lastNum).toFixed(4)
+        display: (answer - lastNum)
       })
     } else if (operator === '/') {
       this.setState({
         answer: answer / lastNum,
-        display: (answer / lastNum).toFixed(4)
+        display: (answer / lastNum)
       })
     } else if (operator === 'x') {
       this.setState({
         answer: answer * lastNum,
-        display: (answer * lastNum).toFixed(4)
+        display: (answer * lastNum)
       })
     }
   }
