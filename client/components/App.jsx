@@ -124,7 +124,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <div className="bg"></div>
-        <h1>You do the math..</h1>
+        <h1>You do the math...</h1>
         <div className='calculator'>
           <div className="display">
             <input
